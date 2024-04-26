@@ -34,7 +34,7 @@ jobs:
       steps:
          - uses: actions/checkout@v4
          - run: |
-             if [ ${{ github.event }} == 'pull_request' ]; then
+             if [ ${{ github.event_name == 'pull_request' ]}} ; then
                REF=${{ github.head_ref }}
              else
                REF=${{ github.head_name }}
